@@ -4,7 +4,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import forms
-import urllib.request
 import calendar
 import math
 
