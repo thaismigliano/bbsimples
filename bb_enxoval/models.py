@@ -12,7 +12,7 @@ class State(models.Model):
 
 
 class City(models.Model):
-  state = models.ForeignKey('State')
+  state = models.ForeignKey('State', on_delete=models.CASCADE)
   name = models.CharField(max_length=100)
   climate_date_url = models.URLField()
 
@@ -21,7 +21,7 @@ class City(models.Model):
 
 
 class Temperature(models.Model):
-  city = models.ForeignKey('City')
+  city = models.ForeignKey('City', on_delete=models.CASCADE)
   month = models.IntegerField()
   t_min_c = models.FloatField()
   t_max_c = models.FloatField()
@@ -30,7 +30,7 @@ class Temperature(models.Model):
 
 
 class Location(models.Model):
-  state = models.ForeignKey(State)
+  state = models.ForeignKey(State , on_delete=models.CASCADE)
   city = ChainedForeignKey(
       City,
       chained_field="state",
