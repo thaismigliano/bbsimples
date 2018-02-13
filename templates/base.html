@@ -1,0 +1,29 @@
+<!DOCTYPE html> {% load staticfiles %}
+<html>
+
+<head>
+  <title>Bebê Simples</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "css/base.css" %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="{% static "/smart-selects/admin/js/bindfields.js" %}"></script>
+  <script src="{% static "/smart-selects/admin/js/chainedfk.js" %}"></script>
+</head>
+
+<body>
+  <nav class="text-center">
+    <a href="{% url 'form' %}">Bebê Simples</a>
+  </nav>
+
+  {% block content %} {% endblock %}
+
+  <footer>
+    {% block footer %} {% endblock %}
+  </footer>
+</body>
+
+</html>
