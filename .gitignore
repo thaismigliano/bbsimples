@@ -1,0 +1,3 @@
+scraper_*.py
+db.sqlite3
+bbsimples/settings.py
