@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "sfiles")
 STATIC_SS_DIR = os.path.join(BASE_DIR, "static")
 
 
@@ -27,9 +27,9 @@ STATIC_SS_DIR = os.path.join(BASE_DIR, "static")
 SECRET_KEY = '_vk&t4t@k$yynoqyo9$6+(fyu8+&w-)zbdmgj-@ms&xd@*htkf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['31.220.61.40', '.bbsimples.com.br']
 
 
 # Application definition
