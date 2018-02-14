@@ -4,80 +4,82 @@
   {% block content %}
     <link rel="stylesheet" href="{% static "css/bb_enxoval.css" %}">
     {% if data %}
-      <table class="table table-hover table-bordered border-pink">
-        <tr>
-          <td></td>
-          {% for month in months %}
-            <td> {{ month }} </td>
-          {% endfor %}
-        </tr>
-        {% for r in data %}
+      <div class="table-wrapper">
+        <table class="table table-hover table-bordered border-pink">
           <tr>
-            {% for text, color in r %}
-              <td style="background-color: {{ color }}"> {{ text }} </td>
+            <td></td>
+            {% for month in months %}
+              <td> {{ month }} </td>
             {% endfor %}
           </tr>
-        {% endfor %}
-        <tr style="border: 0;">
-          <td colspan="13" style="border: 0;"></td>
-        </tr>
-        <tr class="text-bold-center">
-          <td> Tamanho </td>
-          <td> RN/PP</td>
-          <td colspan="2">P</td>
-          <td colspan="3">M</td>
-          <td colspan="3">G</td>
-          <td colspan="3">GG</td>
-        </tr>
-        <tr>
-          <td class="text-bold-center">Body Manga Curta</td>
-          {% for q, col in body_curto %}
-            <td colspan="{{ col }}"> {{ q }} </td>
+          {% for r in data %}
+            <tr>
+              {% for text, color in r %}
+                <td style="background-color: {{ color }}"> {{ text }} </td>
+              {% endfor %}
+            </tr>
           {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Body Manga Longa</td>
-          {% for q, col in body_longo %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Macacão curto</td>
-          {% for q, col in macacao_curto %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Macacão longo</td>
-          {% for q, col in macacao_longo %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Camiseta Manga Curta</td>
-          {% for q, col in camiseta_curta %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Camiseta Manga Longa</td>
-          {% for q, col in camiseta_longa %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Culote</td>
-          {% for q, col in culote %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-        <tr>
-          <td class="text-bold-center">Par de meia</td>
-          {% for q, col in meia %}
-            <td colspan="{{ col }}"> {{ q }} </td>
-          {% endfor %}
-        </tr>
-      </table>
+          <tr style="border: 0;">
+            <td colspan="13" style="border: 0;"></td>
+          </tr>
+          <tr class="text-bold-center">
+            <td> Tamanho </td>
+            <td> RN/PP</td>
+            <td colspan="2">P</td>
+            <td colspan="3">M</td>
+            <td colspan="3">G</td>
+            <td colspan="3">GG</td>
+          </tr>
+          <tr>
+            <td class="text-bold-center">Body Manga Curta</td>
+            {% for q, col in body_curto %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Body Manga Longa</td>
+            {% for q, col in body_longo %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Macacão curto</td>
+            {% for q, col in macacao_curto %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Macacão longo</td>
+            {% for q, col in macacao_longo %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Camiseta Manga Curta</td>
+            {% for q, col in camiseta_curta %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Camiseta Manga Longa</td>
+            {% for q, col in camiseta_longa %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Culote</td>
+            {% for q, col in culote %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+          <tr>
+            <td class="text-bold-center">Par de meia</td>
+            {% for q, col in meia %}
+              <td colspan="{{ col }}"> {{ q }} </td>
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
     {% else %}
       <p>No data.</p>
     {% endif %}

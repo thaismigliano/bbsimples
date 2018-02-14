@@ -117,7 +117,7 @@ class ChainedSelect(JqueryMediaMixin, Select):
                 # Hacky way to getting the correct empty_label from the field instead of a hardcoded '--------'
                 empty_label = iterator.next()[1]
         else:
-            empty_label = "--------"
+            empty_label = "Cidade"
 
         final_choices = []
 

@@ -40,11 +40,6 @@ MEIA = [3, 3, 6, 6, 6]
 
 def get_color(x):
   x = max(min(round(x), 26), 17)
-  # COLORS = ["#AED6F1", "#85C1E9",
-  #           "#A3E4D7", "#76D7C4",
-  #           "#F9E79F", "#F7DC6F",
-  #           "#F5CBA7", "#EB984E",
-  #           "#F1948A", "#EC7063"]
   COLORS = ["#AED6F1", "#AED6F1",
             "#A3E4D7", "#A3E4D7",
             "#F9E79F", "#F9E79F",
@@ -89,7 +84,6 @@ def calculate_num_clothes(q_27, q_17, temp):
 
 def form(request):
   form = forms.FormDateAndCity()
-
   if request.method == 'POST':
     form = forms.FormDateAndCity(request.POST)
 
@@ -139,9 +133,7 @@ def form(request):
                          MEIA,
                          data[0][1:])})
 
-  form.fields['city'].label = "Cidade: "
-  form.fields['state'].label = "Estado: "
-  form.fields['month'].label = "Mês do nascimento: "
+  form.fields['state'].empty_label = "Estado"
   return render(request,
                 'bb_enxoval/form_page.html',
                 {'location_form': form})

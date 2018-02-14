@@ -35,6 +35,5 @@ class Location(models.Model):
       City,
       chained_field="state",
       chained_model_field="state",
-      show_all=False,
-      sort=False
+      show_all=False
   )

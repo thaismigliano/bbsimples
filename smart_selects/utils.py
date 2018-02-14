@@ -2,28 +2,14 @@
 import django
 from django.apps import apps
 from django.utils.encoding import force_text
+import unicodedata
+import string
 
 get_model = apps.get_model
 
-
-def unicode_sorter(input):
-    """ This function implements sort keys for the german language according to
-    DIN 5007."""
-
-    # key1: compare words lowercase and replace umlauts according to DIN 5007
-    key1 = input.lower()
-    key1 = key1.replace(u"ä", u"a")
-    key1 = key1.replace(u"ö", u"o")
-    key1 = key1.replace(u"ü", u"u")
-    key1 = key1.replace(u"ß", u"ss")
-
-    # key2: sort the lowercase word before the uppercase word and sort
-    # the word with umlaut after the word without umlaut
-    # key2=input.swapcase()
-
-    # in case two words are the same according to key1, sort the words
-    # according to key2.
-    return key1
+def unicode_sorter(data):
+    """ This function implements sort keys for the all language."""
+    return ''.join(x for x in unicodedata.normalize('NFKD', data) if x in string.ascii_letters).lower()
 
 
 def get_limit_choices_to(app_name, model_name, field_name):
@@ -69,5 +55,4 @@ def get_keywords(field, value, m2m=False):
 
 def sort_results(results):
     """Performs in-place sort of filterchain results."""
-
-    results.sort(key=lambda x: unicode_sorter(force_text(x)))
+    results.sort(key=lambda x: unicode_sorter(force_text(str(x))))

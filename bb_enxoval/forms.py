@@ -9,7 +9,7 @@ import locale
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
 class FormDateAndCity(forms.ModelForm):
-  MONTH_CHOICES = [(str(i), calendar.month_name[i]) for i in range(1, 13)]
+  MONTH_CHOICES = [("", "Mês Nascimento")] + [(str(i), calendar.month_name[i]) for i in range(1, 13)]
 
   month = ChoiceField(choices=MONTH_CHOICES)
 

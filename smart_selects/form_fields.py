@@ -70,7 +70,7 @@ class GroupedModelSelect(ModelChoiceField):
         # construct might look complicated but it allows for lazy evaluation of
         # the queryset.
         group_indexes = {}
-        choices = [("", self.empty_label or "---------")]
+        choices = [("", self.empty_label or "Cidade")]
         i = len(choices)
         for item in self.queryset:
             order_field = getattr(item, self.order_field)

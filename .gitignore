@@ -1,3 +1,6 @@
 scraper_*.py
 db.sqlite3
 bbsimples/settings.py
+*/__pycache__
+*/__pycache__/*
+bb_enxoval/migrations
