@@ -2,9 +2,12 @@
 <html>
 
 <head>
-  <title>Bebê Simples</title>
+  <title>Bebê Simples - Enxoval personalizado baseado na cidade e mês de nascimento.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enxoval personalizado baseado na cidade e mês de nascimento.">
+  <meta Name="robots" content="index">
+
   <link rel="stylesheet" href="{% static "css/base.css" %}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,15 +15,22 @@
   <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="{% static "/smart-selects/admin/js/bindfields.js" %}"></script>
   <script src="{% static "/smart-selects/admin/js/chainedfk.js" %}"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114218713-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114218713-1');
+  </script>
 </head>
 
 <body>
   <nav class="text-center">
     <a href="{% url 'form' %}">Bebê Simples</a>
   </nav>
-
   {% block content %} {% endblock %}
-
   <footer>
     {% block footer %} {% endblock %}
   </footer>
