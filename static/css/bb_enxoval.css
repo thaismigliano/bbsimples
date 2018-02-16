@@ -17,17 +17,14 @@ tr:first-child {
   border: 0;
 }
 
-.table {
-  border: 0;
-  max-width: 800px;
-}
-
-.table-wrapper {
-  padding: 60px 10px 0 10px;
-}
-
 .table-bordered > tbody > tr > td {
    border: 0.5px solid #FFC0CB;
+   vertical-align: middle;
+}
+
+.table {
+  border: 0;
+  min-width: 280px;
 }
 
 .text-bold-center {
@@ -40,28 +37,10 @@ tr:first-child {
   padding: 10px 10px;
   box-shadow: none;
   width: 280px;
-  max-width: 280px;
   border: 1px solid #FFC0CB;
   background: transparent;
-  position: absolute;
+  position: relative;
   left: 50%;
   margin-left: -140px;
-}
-
-@media screen and (max-width: 700px) {
-    .table {
-        margin-top: 60px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .trimester-select {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 700px) {
-    .trimester-select {
-        display: none;
-    }
+  margin-bottom: 20px;
 }

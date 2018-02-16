@@ -30,9 +30,15 @@
   <nav class="text-center">
     <a href="{% url 'form' %}">Bebê Simples</a>
   </nav>
-  {% block content %} {% endblock %}
+  <div class="content">
+    {% block content %} {% endblock %}
+  </div>
   <footer>
-    {% block footer %} {% endblock %}
+    <div class="icon-container">
+      <img src="{% static "/images/facebook.svg" %}">
+      <img src="{% static "/images/instagram.svg" %}">
+      <img src="{% static "/images/pinterest.svg" %}">
+    </div>
   </footer>
 </body>
 

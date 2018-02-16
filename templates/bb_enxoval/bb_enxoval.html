@@ -4,45 +4,48 @@
   {% block content %}
     <link rel="stylesheet" href="{% static "css/bb_enxoval.css" %}">
     <script>
-    function UpdateColumns(value) {
-      if (window.innerWidth > 700) return;
-      var table = document.getElementById("table-enxoval");
-      // var cols = table.getElementsByTagName('col');
-      for (var i = 0, row; row = table.rows[i]; i++) {
-        var colSpan = 0;
-        for (var j = 1, col; col = row.cells[j]; j++) {
-          colSpan += col.colSpan;
-          if (colSpan > 3 * (value - 1) && colSpan <= 3 * value) {
-            col.style.display = 'table-cell';
-          } else {
-            col.style.display = 'none';
+      function ShowSelect() {
+        var trimester = document.getElementById("select-trimester");
+        if (window.innerWidth > 726) {
+          trimester.style.display = 'none';
+        } else {
+          trimester.style.display = 'block';
+        }
+      }
+      function UpdateColumns(value) {
+        if (window.innerWidth > 726) return;
+        var table = document.getElementById("table-enxoval");
+        for (var i = 0, row; row = table.rows[i]; i++) {
+          var colSpan = 0;
+          for (var j = 1, col; col = row.cells[j]; j++) {
+            colSpan += col.colSpan;
+            if (colSpan > 3 * (value - 1) && colSpan <= 3 * value) {
+              col.style.display = 'table-cell';
+            } else {
+              col.style.display = 'none';
+            }
           }
         }
       }
-    }
 
-    function SelectTrimester(selectObject) {
-      var trimester = selectObject.value;
-      UpdateColumns(trimester);
-    }
+      function SelectTrimester(selectObject) {
+        var trimester = selectObject.value;
+        UpdateColumns(trimester);
+      }
     </script>
 
     {% if data %}
-      <div class="table-wrapper">
-        <select class="trimester-select" onchange="SelectTrimester(this)">
+
+        <select id="select-trimester" class="trimester-select" onchange="SelectTrimester(this)">
           <option value=1>0 - 3 Meses</option>
           <option value=2>3 - 6 Meses</option>
           <option value=3>6 - 9 Meses</option>
           <option value=4>9 - 12 Meses</option>
         </select>
 
-        <table id ="table-enxoval" class="table table-hover table-bordered border-pink">
-          <col id="col0"> <col id="col1"> <col id="col2"> <col id="col3">
-          <col id="col4"> <col id="col5"> <col id="col6"> <col id="col7">
-          <col id="col8"> <col id="col9"> <col id="col10"> <col id="col11">
-          <col id="col12">
+        <table id ="table-enxoval" class="table table-hover table-bordered">
           <tr>
-            <td></td>
+            <td style="min-width:144px; width: 150px;"></td>
             {% for month in months %}
               <td> {{ month }} </td>
             {% endfor %}
@@ -116,8 +119,9 @@
         </table>
         <script>
           UpdateColumns(1);
+          ShowSelect();
         </script>
-      </div>
+
     {% else %}
       <p>No data.</p>
     {% endif %}

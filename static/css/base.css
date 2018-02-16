@@ -1,10 +1,30 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
+html {
+    position: relative;
+    min-height: 100%;
+    max-width: 726px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
 nav {
   background-color: #008B8B;
   font-size: 20px;
   padding: 10px;
-  position: fixed;
+  height: 50px;
+  top: 0;
+  position: absolute;
   width: 100%;
+}
+
+.content {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top:50px;
+  bottom: 0px;
+  overflow: auto;
+  padding: 30px 10px;
 }
 
 nav a {
@@ -15,7 +35,17 @@ nav a {
 footer {
   background-color: #FFC0CB;
   bottom: 0;
-  padding: 15px;
-  position: fixed;
+  height: 30px;
+  position: absolute;
   width: 100%;
+  text-align: center;
+}
+
+.icon-container {
+  padding-top: 3px;
+}
+
+footer img {
+  width: 24px;
+  height: 24px;
 }
