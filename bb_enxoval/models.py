@@ -10,6 +10,9 @@ class State(models.Model):
   def __str__(self):
     return self.name
 
+  class Meta:
+    ordering = ['id']
+
 
 class City(models.Model):
   state = models.ForeignKey('State')
@@ -18,6 +21,9 @@ class City(models.Model):
 
   def __str__(self):
     return self.name
+
+  class Meta:
+    ordering = ['id']
 
 
 class Temperature(models.Model):
