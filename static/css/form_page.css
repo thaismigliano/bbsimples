@@ -19,9 +19,19 @@ button {
 .form {
   position: fixed;
   left: 50%;
-  top: 50%;
   margin-left: -157px;
-  margin-top: -116px;
+  margin-top: 174px;
+}
+
+.info {
+  position: fixed;
+  padding: 16px;
+  left: 50%;
+  width: 314px;
+  max-width: 314px;
+  text-align: justify;
+  margin-left: -157px;
+  border: 1px solid #FFC0CB
 }
 
 form {

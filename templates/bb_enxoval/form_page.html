@@ -2,6 +2,12 @@
 {% extends "base.html" %}
   {% load staticfiles %}
   {% block content %}
+    <div class="info">
+      Preencha os campos abaixo para estimarmos a quantidade de cada roupa no
+      enxoval do seu bebê :) <br>
+      Usaremos o local e mês para sabermos a temperatura esperada e então propor
+      uma quantidade mais adequada.
+    </div>
     <div class="form">
       <link rel="stylesheet" href="{% static "css/form_page.css" %}">
       <form method="POST">
