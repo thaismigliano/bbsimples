@@ -1,0 +1,125 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bbsimples.settings')
+
+import django
+django.setup()
+
+from bb_enxoval.models import City, State
+from smart_selects.utils import unicode_sorter
+
+CIDADES = [
+"Fortaleza",
+"Caucaia",
+"Juazeiro do Norte",
+"Maracanaú",
+"Sobral",
+"Crato",
+"Itapipoca",
+"Maranguape",
+"Iguatu",
+"Quixadá",
+"Pacatuba",
+"Aquiraz",
+"Quixeramobim",
+"Canindé",
+"Russas",
+"Tianguá",
+"Crateús",
+"Aracati",
+"Cascavel",
+"Pacajus",
+"Icó",
+"Horizonte",
+"Camocim",
+"Acaraú",
+"Morada Nova",
+"São Benedito",
+"Barbalha",
+"Limoeiro do Norte",
+"Tauá",
+"Trairi",
+"Granja",
+"Boa Viagem",
+"Acopiara",
+"Beberibe",
+"Eusébio",
+"Itapajé",
+"Brejo Santo",
+"São Gonçalo do Amarante",
+"Viçosa do Ceará",
+"Mauriti",
+"Mombaça",
+"Santa Quitéria",
+"Amontada",
+"Pedra Branca",
+"Ipu",
+"Itarema",
+"Várzea Alegre",
+"Guaraciaba do Norte",
+"Itaitinga",
+"Massapê",
+"Ipueiras",
+"Pentecoste",
+"Missão Velha",
+"Baturité",
+"Jaguaribe",
+"Ubajara",
+"Paracuru",
+"Jaguaruana",
+"Paraipaba",
+"Bela Cruz",
+"Nova Russas",
+"Santana do Acaraú",
+"Lavras da Mangabeira",
+"Parambu",
+"Tabuleiro do Norte",
+"Milagres",
+"Novo Oriente",
+"Redenção",
+"Campos Sales",
+"Jardim",
+"Marco",
+"Caririaçu",
+"Senador Pompeu",
+"Guaiúba",
+"Aracoiaba",
+"Independência",
+"Tamboril",
+"Ocara",
+"Cedro",
+"Ibiapina",
+"Jucás",
+"Aurora",
+"Forquilha",
+"Cruz",
+"Irauçuba",
+"Assaré",
+"Coreaú",
+"Barro",
+"Caridade",
+"Morrinhos",
+"Quixeré",
+"Uruburetama",
+"Araripe",
+"Orós",
+"Barreira",
+"Quiterianópolis",
+"Itatira",
+"Pindoretama",
+"Catarina",
+"Hidrolândia",
+"Itapiúna",
+]
+
+if __name__ == '__main__':
+    state = State.objects.filter(acronym="CE")
+    cities = City.objects.filter(state=state)
+    # city_names = {}
+    # for city in cities:
+    #     city_names[city.name] = True
+    # for city in CIDADES:
+    #     if city not in city_names:
+    #         print(city)
+    for city in cities:
+        if city.name not in CIDADES:
+            city.delete()

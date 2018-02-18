@@ -31,6 +31,11 @@ nav a {
   color: white;
 }
 
+nav a:hover {
+  color: #FFC0CB;
+  text-decoration: none;
+}
+
 /* Set black background color, white text and some padding */
 footer {
   background-color: #FFC0CB;
@@ -46,6 +51,7 @@ footer {
 }
 
 footer img {
+  margin: 0 8px;
   width: 24px;
   height: 24px;
 }
