@@ -27,6 +27,13 @@ tr:first-child {
   min-width: 280px;
 }
 
+h1 {
+  font-family: monospace;
+  font-size: 24px;
+  color: #008B8B;
+  text-align: center:
+}
+
 .text-bold-center {
   font-weight: bold;
   text-align: center;
