@@ -29,6 +29,8 @@ nav {
 
 nav a {
   color: white;
+  font-family: monospace;
+  font-size: 22px;
 }
 
 nav a:hover {
