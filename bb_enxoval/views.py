@@ -96,6 +96,7 @@ def form(request):
                     'bb_enxoval/bb_enxoval.html',
                     {'data': data,
                      'months': MONTHS[month:] + MONTHS[:month],
+                     'city_name' : city.name,
                      'body_curto': calculate_num_clothes(
                          BODY_CURTO_27,
                          BODY_CURTO_17,
